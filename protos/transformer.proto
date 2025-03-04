@@ -7,12 +7,12 @@ service ImageTransformer {
 }
 
 message TransformRequest {
-    string imageData = 1;
+    bytes imageData = 1;
     repeated Operation operation = 2;
 }
 
 message Operation {
-    OperationType type = 1;
+    OperationType kind = 1;
     repeated int32 arguments = 2;
 }
 
@@ -28,6 +28,6 @@ enum OperationType {
 }
 
 message TransformResponse {
-    repeated string imageData = 1;
-    repeated string thumbnailData = 2;
+    repeated bytes imageData = 1;
+    repeated bytes thumbnailData = 2;
 }
