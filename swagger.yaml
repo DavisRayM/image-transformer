@@ -2,19 +2,20 @@
 swagger: '2.0'
 info:
   title: Image Transformation API
+  description: |-
+    An Image Processing RPC API, which provides endpoints for users to perform various image processing operations. This document is intended for the CPSC 5200-02 lecturer, grader and API Users.
   version: '1.0'
   contact:
     name: DavisRayM
-    url: 'https://github.com/DavisRayM/image-transformer'
+    url: 'https://github.com/DavisRayM'
     email: git@davisraym.com
   license:
     name: MIT
-    url: 'https://github.com/DavisRayM/image-transformer/LICENSE'
+    url: 'https://github.com/DavisRayM/image-transformer/blob/main/LICENSE'
 tags:
   - name: ImageTransformer
 schemes:
   - http
-  - https
 consumes:
   - application/json
 produces:
@@ -22,6 +23,9 @@ produces:
 paths:
   /api/v1/transform:
     post:
+      summary: Apply transformations on the supplied image.
+      description: |-
+        Provides an endpoint for users to perform a combination of image transformation operation on the supplied image.
       operationId: ImageTransformer_transform
       responses:
         '200':
