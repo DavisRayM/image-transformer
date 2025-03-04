@@ -18,6 +18,7 @@ import grpc_tools.protoc
 SOURCE_DIR = "protos"
 OUTPUT_DIR = "src"
 
+
 def generate_protobufs():
     """
     Generates python gRPC and Protobuf files from .proto definitions.
@@ -36,10 +37,11 @@ def generate_protobufs():
             f"--proto_path={SOURCE_DIR}",
             f"--python_out={OUTPUT_DIR}",
             f"--grpc_python_out={OUTPUT_DIR}",
-            proto_file
+            proto_file,
         ]
         grpc_tools.protoc.main(command)
     print(f"Protobufs generated successfully in: {OUTPUT_DIR}")
+
 
 if __name__ == "__main__":
     generate_protobufs()
