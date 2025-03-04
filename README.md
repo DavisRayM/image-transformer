@@ -3,6 +3,11 @@
 An Image Processing RPC API plus an accompanying CLI tool that utilizes
 the RPI API to perform image transformations.
 
+## Target Audience
+
+- CPSC 5200-02 Lecturer and Grader
+- Whoever is interested
+
 ## Running the Project
 
 This project utilizes Python with UV as the package manager. One can run
