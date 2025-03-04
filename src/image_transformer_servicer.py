@@ -104,24 +104,32 @@ class ImageTransformerServicer(transformer_pb2_grpc.ImageTransformerServicer):
         version of the image after operation alongside requested thumbnails.
         """
         im = Image.open(BytesIO(request.imageData))
+        modified = False
         format = im.format
         thumbnails = []
 
         for op in request.operation:
             match op.kind:
                 case OperationType.RotateLeft:
+                    modified = True
                     im = self.rotate_image(im, -90)
                 case OperationType.RotateRight:
+                    modified = True
                     im = self.rotate_image(im, 90)
                 case OperationType.RotateN:
+                    modified = True
                     im = self.rotate_image(im, op.arguments[0])
                 case OperationType.FlipHorizontally:
+                    modified = True
                     im = self.flip_image(im, horizontal=True)
                 case OperationType.FlipVertically:
+                    modified = True
                     im = self.flip_image(im, horizontal=False)
                 case OperationType.GrayScale:
+                    modified = True
                     im = self.grayscale_image(im)
                 case OperationType.Resize:
+                    modified = True
                     im = self.resize_image(im, op.arguments[0], op.arguments[1])
                 case OperationType.Thumbnail:
                     ret_image = BytesIO()
@@ -130,12 +138,13 @@ class ImageTransformerServicer(transformer_pb2_grpc.ImageTransformerServicer):
                     ).save(ret_image, format)
                     thumbnails.append(ret_image.getvalue())
 
-        ret_image = BytesIO()
-        im.save(ret_image, format)
+        images = []
+        if modified:
+            ret_image = BytesIO()
+            im.save(ret_image, format)
+            images.append(ret_image.getvalue())
 
-        return TransformResponse(
-            imageData=[ret_image.getvalue()], thumbnailData=thumbnails
-        )
+        return TransformResponse(imageData=images, thumbnailData=thumbnails)
 
     def transform(self, request, context):
         """
