@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package src;
+
+service ImageTransformer {
+    rpc transform (TransformRequest) returns (TransformResponse) {}
+}
+
+message TransformRequest {
+    string imageData = 1;
+    repeated Operation operation = 2;
+}
+
+message Operation {
+    OperationType type = 1;
+    repeated int32 arguments = 2;
+}
+
+enum OperationType {
+    RotateLeft = 0;
+    RotateRight = 1;
+    RotateN = 2;
+    FlipHorizontally = 3;
+    FlipVertically = 4;
+    GrayScale = 5;
+    Resize = 6;
+    Thumbnail = 7;
+}
+
+message TransformResponse {
+    repeated string imageData = 1;
+    repeated string thumbnailData = 2;
+}
