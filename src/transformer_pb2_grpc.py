@@ -38,7 +38,7 @@ class ImageTransformerStub(object):
             channel: A grpc.Channel.
         """
         self.transform = channel.unary_unary(
-            "/src.ImageTransformer/transform",
+            "/transform.v1.ImageTransformer/transform",
             request_serializer=transformer__pb2.TransformRequest.SerializeToString,
             response_deserializer=transformer__pb2.TransformResponse.FromString,
             _registered_method=True,
@@ -64,10 +64,12 @@ def add_ImageTransformerServicer_to_server(servicer, server):
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-        "src.ImageTransformer", rpc_method_handlers
+        "transform.v1.ImageTransformer", rpc_method_handlers
     )
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers("src.ImageTransformer", rpc_method_handlers)
+    server.add_registered_method_handlers(
+        "transform.v1.ImageTransformer", rpc_method_handlers
+    )
 
 
 # This class is part of an EXPERIMENTAL API.
@@ -90,7 +92,7 @@ class ImageTransformer(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/src.ImageTransformer/transform",
+            "/transform.v1.ImageTransformer/transform",
             transformer__pb2.TransformRequest.SerializeToString,
             transformer__pb2.TransformResponse.FromString,
             options,

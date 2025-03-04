@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package src;
+package transform.v1;
 
 service ImageTransformer {
-    rpc transform (TransformRequest) returns (TransformResponse) {}
+    rpc transform (TransformRequest) returns (TransformResponse) {
+    }
 }
 
 message TransformRequest {

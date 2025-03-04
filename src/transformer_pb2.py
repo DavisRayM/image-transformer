@@ -19,7 +19,7 @@ _sym_db = _symbol_database.Default()
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x11transformer.proto\x12\x03src"H\n\x10TransformRequest\x12\x11\n\timageData\x18\x01 \x01(\x0c\x12!\n\toperation\x18\x02 \x03(\x0b\x32\x0e.src.Operation"@\n\tOperation\x12 \n\x04kind\x18\x01 \x01(\x0e\x32\x12.src.OperationType\x12\x11\n\targuments\x18\x02 \x03(\x05"=\n\x11TransformResponse\x12\x11\n\timageData\x18\x01 \x03(\x0c\x12\x15\n\rthumbnailData\x18\x02 \x03(\x0c*\x91\x01\n\rOperationType\x12\x0e\n\nRotateLeft\x10\x00\x12\x0f\n\x0bRotateRight\x10\x01\x12\x0b\n\x07RotateN\x10\x02\x12\x14\n\x10\x46lipHorizontally\x10\x03\x12\x12\n\x0e\x46lipVertically\x10\x04\x12\r\n\tGrayScale\x10\x05\x12\n\n\x06Resize\x10\x06\x12\r\n\tThumbnail\x10\x07\x32P\n\x10ImageTransformer\x12<\n\ttransform\x12\x15.src.TransformRequest\x1a\x16.src.TransformResponse"\x00\x62\x06proto3'
+    b'\n\x11transformer.proto\x12\x0ctransform.v1"Q\n\x10TransformRequest\x12\x11\n\timageData\x18\x01 \x01(\x0c\x12*\n\toperation\x18\x02 \x03(\x0b\x32\x17.transform.v1.Operation"I\n\tOperation\x12)\n\x04kind\x18\x01 \x01(\x0e\x32\x1b.transform.v1.OperationType\x12\x11\n\targuments\x18\x02 \x03(\x05"=\n\x11TransformResponse\x12\x11\n\timageData\x18\x01 \x03(\x0c\x12\x15\n\rthumbnailData\x18\x02 \x03(\x0c*\x91\x01\n\rOperationType\x12\x0e\n\nRotateLeft\x10\x00\x12\x0f\n\x0bRotateRight\x10\x01\x12\x0b\n\x07RotateN\x10\x02\x12\x14\n\x10\x46lipHorizontally\x10\x03\x12\x12\n\x0e\x46lipVertically\x10\x04\x12\r\n\tGrayScale\x10\x05\x12\n\n\x06Resize\x10\x06\x12\r\n\tThumbnail\x10\x07\x32\x62\n\x10ImageTransformer\x12N\n\ttransform\x12\x1e.transform.v1.TransformRequest\x1a\x1f.transform.v1.TransformResponse"\x00\x62\x06proto3'
 )
 
 _globals = globals()
@@ -27,14 +27,14 @@ _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "transformer_pb2", _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
     DESCRIPTOR._loaded_options = None
-    _globals["_OPERATIONTYPE"]._serialized_start = 230
-    _globals["_OPERATIONTYPE"]._serialized_end = 375
-    _globals["_TRANSFORMREQUEST"]._serialized_start = 26
-    _globals["_TRANSFORMREQUEST"]._serialized_end = 98
-    _globals["_OPERATION"]._serialized_start = 100
-    _globals["_OPERATION"]._serialized_end = 164
-    _globals["_TRANSFORMRESPONSE"]._serialized_start = 166
-    _globals["_TRANSFORMRESPONSE"]._serialized_end = 227
-    _globals["_IMAGETRANSFORMER"]._serialized_start = 377
-    _globals["_IMAGETRANSFORMER"]._serialized_end = 457
+    _globals["_OPERATIONTYPE"]._serialized_start = 257
+    _globals["_OPERATIONTYPE"]._serialized_end = 402
+    _globals["_TRANSFORMREQUEST"]._serialized_start = 35
+    _globals["_TRANSFORMREQUEST"]._serialized_end = 116
+    _globals["_OPERATION"]._serialized_start = 118
+    _globals["_OPERATION"]._serialized_end = 191
+    _globals["_TRANSFORMRESPONSE"]._serialized_start = 193
+    _globals["_TRANSFORMRESPONSE"]._serialized_end = 254
+    _globals["_IMAGETRANSFORMER"]._serialized_start = 404
+    _globals["_IMAGETRANSFORMER"]._serialized_end = 502
 # @@protoc_insertion_point(module_scope)
