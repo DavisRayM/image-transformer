@@ -15,7 +15,7 @@ from src import transformer_pb2_grpc
 MAX_IMAGE_SIZE = (4000, 4000)
 
 # Dimensions of a thumbail image
-THUMBNAIL_DIMENSIONS = (30, 30)
+THUMBNAIL_DIMENSIONS = (300, 300)
 
 # A map of the required arguments for each operation
 OPERATION_REQUIRED_ARGS = {
