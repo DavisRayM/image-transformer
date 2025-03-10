@@ -97,6 +97,19 @@ wheels = [
 ]
 
 [[package]]
+name = "grpcio-testing"
+version = "1.70.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "grpcio" },
+    { name = "protobuf" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7d/43/b15d838a3927e5f4f33f61376ba52b1d870ffe7f397bc65d0ac2102d2df1/grpcio_testing-1.70.0.tar.gz", hash = "sha256:5eb54db74ce05bc97ee15bb3ae00eddfa002b83f5806813572fd9c798003e075", size = 22503 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cd/a2/7b7d765b5cb6e2f4676ca549eba2e661cbd15a0a5197aff334579e5bc465/grpcio_testing-1.70.0-py3-none-any.whl", hash = "sha256:0de1767fe12a4af9b039d0db59e1a8712229f4a4c8b83c90ac9d02170c7c7173", size = 33183 },
+]
+
+[[package]]
 name = "grpcio-tools"
 version = "1.70.0"
 source = { registry = "https://pypi.org/simple" }
@@ -124,6 +137,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "grpcio" },
+    { name = "grpcio-testing" },
     { name = "grpcio-tools" },
     { name = "inquirer" },
     { name = "pillow" },
@@ -137,6 +151,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "grpcio", specifier = ">=1.70.0" },
+    { name = "grpcio-testing", specifier = ">=1.70.0" },
     { name = "grpcio-tools", specifier = ">=1.70.0" },
     { name = "inquirer", specifier = ">=3.4.0" },
     { name = "pillow", specifier = ">=11.1.0" },
