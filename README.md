@@ -3,12 +3,7 @@
 [Swagger Docs](https://davisraym.com/image-transformer/)
 
 An Image Processing RPC API plus an accompanying CLI tool that utilizes
-the RPI API to perform image transformations.
-
-## Target Audience
-
-- CPSC 5200-02 Lecturer and Grader
-- Whoever is interested
+the RPC API to perform image transformations.
 
 ## Running the Project
 
