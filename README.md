@@ -5,6 +5,8 @@
 An Image Processing RPC API plus an accompanying CLI tool that utilizes
 the RPC API to perform image transformations.
 
+The program can be used to batch various image transformation operations. *NOTE*: The operations are applied to the image in order
+
 ## Running the Project
 
 This project utilizes Python with UV as the package manager. One can run
